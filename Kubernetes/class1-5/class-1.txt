@@ -1,0 +1,28 @@
+
+
+# minikube insallation 
+1. docker desktop
+2. minikube download and install
+3. kubectl download and install
+
+kubectl version --client
+minikube start driver=docker
+
+
+# kind insallation 
+
+1. docker desktop
+2. kind download and install
+3. kubectl download and install
+
+
+kind create cluster --name xyz
+
+
+
+
+
+
+
+
+docker run -d -p -v 

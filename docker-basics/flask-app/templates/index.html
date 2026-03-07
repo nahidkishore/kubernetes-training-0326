@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To-Do App</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #f4f4f4;
+        margin: 5px 0;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      a {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      form {
+        display: flex;
+        gap: 10px;
+      }
+      input {
+        flex-grow: 1;
+        padding: 5px;
+      }
+      button {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My To-Do List</h1>
+    <form action="/add" method="POST">
+      <input type="text" name="todo" placeholder="Enter a new task" required />
+      <button type="submit">Add</button>
+    </form>
+    <ul>
+      {% for todo in todos %}
+      <li>
+        {{ todo }}
+        <a href="/delete/{{ loop.index0 }}">X</a>
+      </li>
+      {% else %}
+      <li>No tasks yet!</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
